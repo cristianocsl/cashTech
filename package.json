@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": ">=8.10.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json .",
@@ -27,6 +30,7 @@
   },
   "homepage": "https://github.com/cristianocsl/cashTech",
   "dependencies": {
+    "dotenv": "^16.0.0",
     "mysql2": "^2.3.3",
     "sequelize": "^6.19.0",
     "sequelize-cli": "^6.4.1"
@@ -38,6 +42,7 @@
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.15.0",
     "eslint-config-trybe-backend": "^1.0.4",
+    "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-sonarjs": "^0.13.0",
     "husky": "^7.0.4",
     "nodemon": "^2.0.16"
