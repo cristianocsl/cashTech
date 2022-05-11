@@ -25,5 +25,11 @@ module.exports.Sponsor = (sequelize, DataTypes) => {
     cnpjId: DataTypes.INTEGER,
     email: DataTypes.STRING,
   });
+
+  sponsor.associate = (models) => {
+    sponsor.hasMany(models.Cnpj,
+      { foreignKey: 'cnpjId', as: 'cnpj' });
+  };
+
   return sponsor;
 };

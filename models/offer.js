@@ -13,5 +13,16 @@ module.exports.Offer = (sequelize, DataTypes) => {
     orderId: DataTypes.INTEGER,
     sponsorId: DataTypes.INTEGER,
   });
+
+  offer.associate = (models) => {
+    offer.belongsTo(models.Order,
+      { foreignKey: 'orderId', as: 'order' });
+  };
+
+  offer.associate = (models) => {
+    offer.belongsTo(models.Sponsor,
+      { foreignKey: 'sponsorId', as: 'sponsor' });
+  };
+
   return offer;
 };

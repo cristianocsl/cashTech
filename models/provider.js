@@ -26,5 +26,10 @@ module.exports.Provider = (sequelize, DataTypes) => {
     cnpjId: DataTypes.INTEGER,
     email: DataTypes.STRING,
   });
+
+  provider.associate = (models) => {
+    provider.hasMany(models.Cnpj,
+      { foreingKey: 'cnpjId', as: 'cnpj' });
+  };
   return provider;
 };

@@ -25,6 +25,11 @@ module.exports.Buyer = (sequelize, DataTypes) => {
     confirm: DataTypes.TINYINT,
     email: DataTypes.STRING,
   });
+
+  buyer.associate = (models) => {
+    buyer.hasOne(models.Cnpj,
+      { foreignKey: 'cnpjId', as: 'cnpj' });
+  };
   
   return buyer;
 };

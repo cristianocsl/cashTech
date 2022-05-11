@@ -8,5 +8,11 @@ module.exports.Orderportion = (sequelize, DataTypes) => {
     updatedAt: DataTypes.DATE,
     orderId: DataTypes.INTEGER,
   });
+  
+  orderportion.associate = (models) => {
+    orderportion.belongsTo(models.Order,
+      { foreignKey: 'orderId', as: 'order' });
+  };
+
   return orderportion;
 };

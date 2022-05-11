@@ -1,5 +1,5 @@
 module.exports.Order = (sequelize, DataTypes) => {
-  const order = sequelize.define({
+  const order = sequelize.define('Order', {
     orderNfId: DataTypes.STRING,
     orderNumber: DataTypes.STRING,
     orderPath: DataTypes.STRING,
@@ -21,5 +21,20 @@ module.exports.Order = (sequelize, DataTypes) => {
     cargoPackingList: DataTypes.STRING,
     deliveryCtrc: DataTypes.STRING,
   });
+
+  order.associate = (models) => {
+    order.belongsTo(models.Cnpj,
+      { foreignKey: 'cnpjId', as: 'cnpj' });
+  
+    order.belongsTo(models.User,
+      { foreignKey: 'UserId', as: 'user' });
+
+    order.belongsTo(models.Buyer,
+      { foreignKey: 'BuyerId', as: 'buyer' });
+
+    order.belongsTo(models.Provider,
+      { foreignKey: 'ProviderId', as: 'provider' });
+  };
+
   return order;
 };

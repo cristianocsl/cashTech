@@ -5,5 +5,11 @@ module.exports.Cnpj = (sequelize, DataTypes) => {
     createdAt: DataTypes.DATE,
     updatedAt: DataTypes.DATE,
   });
+
+  cnpj.associate = (models) => {
+    cnpj.hasMany(models.Order,
+      { foreignKey: 'OrderId', as: 'order' });
+  };
+
   return cnpj;
 };

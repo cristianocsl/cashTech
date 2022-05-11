@@ -9,5 +9,10 @@ module.exports.User = (sequelize, DataTypes) => {
     emailCheked: DataTypes.TINYINT,
     casheforceAdm: DataTypes.TINYINT,
   });
+
+  user.associate = (models) => {
+    user.hasMany(models.Order,
+      { foreignKey: 'OrderId', as: 'order' });
+  };
   return user;
 };
