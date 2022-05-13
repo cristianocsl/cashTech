@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-expressions */
 /* eslint-disable global-require */
 /* eslint-disable import/no-dynamic-require */
 const fs = require('fs');
@@ -21,7 +20,7 @@ fs
   .readdirSync(__dirname)
   .filter((file) => (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js'))
   .forEach((file) => {
-    const model = require(path.join(__dirname, file));
+    const model = require(path.join(__dirname, file))(sequelize, Sequelize.DataTypes);
     db[model.name] = model;
   });
 
@@ -32,6 +31,6 @@ Object.keys(db).forEach((modelName) => {
 });
 
 db.sequelize = sequelize;
-`${__dirname}/../config/config.js`;
+db.Sequelize = Sequelize;
 
 module.exports = db;

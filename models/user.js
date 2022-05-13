@@ -1,5 +1,5 @@
-module.exports.User = (sequelize, DataTypes) => {
-  const user = sequelize.define({
+const User = (sequelize, DataTypes) => {
+  const user = sequelize.define('User', {
     name: DataTypes.STRING,
     email: DataTypes.STRING,
     phoneNumber: DataTypes.STRING,
@@ -10,9 +10,7 @@ module.exports.User = (sequelize, DataTypes) => {
     casheforceAdm: DataTypes.TINYINT,
   });
 
-  user.associate = (models) => {
-    user.hasMany(models.Order,
-      { foreignKey: 'OrderId', as: 'order' });
-  };
   return user;
 };
+
+module.exports = User;

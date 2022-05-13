@@ -1,5 +1,5 @@
-module.exports.Orderportion = (sequelize, DataTypes) => {
-  const orderportion = sequelize.define({
+const OrderPortion = (sequelize, DataTypes) => {
+  const orderportion = sequelize.define('OrderPortion', {
     nDup: DataTypes.STRING,
     dVenc: DataTypes.STRING,
     vDup: DataTypes.STRING,
@@ -8,11 +8,13 @@ module.exports.Orderportion = (sequelize, DataTypes) => {
     updatedAt: DataTypes.DATE,
     orderId: DataTypes.INTEGER,
   });
-  
+
   orderportion.associate = (models) => {
     orderportion.belongsTo(models.Order,
       { foreignKey: 'orderId', as: 'order' });
   };
-
+  
   return orderportion;
 };
+
+module.exports = OrderPortion;

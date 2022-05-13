@@ -1,4 +1,4 @@
-module.exports.Buyer = (sequelize, DataTypes) => {
+const Buyer = (sequelize, DataTypes) => {
   const buyer = sequelize.define('Buyer', {
     name: DataTypes.STRING,
     tradingName: DataTypes.STRING,
@@ -27,9 +27,11 @@ module.exports.Buyer = (sequelize, DataTypes) => {
   });
 
   buyer.associate = (models) => {
-    buyer.hasOne(models.Cnpj,
+    models.Buyer.belongsTo(models.Cnpj,
       { foreignKey: 'cnpjId', as: 'cnpj' });
   };
   
   return buyer;
 };
+
+module.exports = Buyer;

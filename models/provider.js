@@ -1,5 +1,5 @@
-module.exports.Provider = (sequelize, DataTypes) => {
-  const provider = sequelize.define({
+const Provider = (sequelize, DataTypes) => {
+  const provider = sequelize.define('Provider', {
     name: DataTypes.STRING,
     tradingName: DataTypes.STRING,
     cashforceTax: DataTypes.STRING,
@@ -28,8 +28,11 @@ module.exports.Provider = (sequelize, DataTypes) => {
   });
 
   provider.associate = (models) => {
-    provider.hasMany(models.Cnpj,
+    provider.belongsTo(models.Cnpj,
       { foreingKey: 'cnpjId', as: 'cnpj' });
   };
+
   return provider;
 };
+
+module.exports = Provider;

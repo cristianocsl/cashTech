@@ -1,4 +1,4 @@
-module.exports.Order = (sequelize, DataTypes) => {
+const Order = (sequelize, DataTypes) => {
   const order = sequelize.define('Order', {
     orderNfId: DataTypes.STRING,
     orderNumber: DataTypes.STRING,
@@ -23,18 +23,20 @@ module.exports.Order = (sequelize, DataTypes) => {
   });
 
   order.associate = (models) => {
-    order.belongsTo(models.Cnpj,
+    models.Order.belongsTo(models.User,
+      { foreignKey: 'userId', as: 'user' });
+
+    models.Order.belongsTo(models.Buyer,
+      { foreignKey: 'buyerId', as: 'buyer' });
+
+    models.Order.belongsTo(models.Provider,
+      { foreignKey: 'providerId', as: 'provider' });
+
+    models.Order.belongsTo(models.Cnpj,
       { foreignKey: 'cnpjId', as: 'cnpj' });
-  
-    order.belongsTo(models.User,
-      { foreignKey: 'UserId', as: 'user' });
-
-    order.belongsTo(models.Buyer,
-      { foreignKey: 'BuyerId', as: 'buyer' });
-
-    order.belongsTo(models.Provider,
-      { foreignKey: 'ProviderId', as: 'provider' });
   };
 
   return order;
 };
+
+module.exports = Order;
