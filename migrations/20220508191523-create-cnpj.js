@@ -9,6 +9,7 @@ module.exports = {
       },
       cnpj: {
         type: Sequelize.STRING,
+        unique: true,
       },
       companyType: {
         type: Sequelize.STRING,
