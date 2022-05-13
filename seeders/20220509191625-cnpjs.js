@@ -3,7 +3,7 @@ module.exports = {
     await queryInterface.bulkInsert('Cnpjs',
     [
       {
-        cnpj: '00000000000001',
+        cnpj: '00000000000002',
         companyType: '2',
         createdAt: '2020-10-29 21:20:32',
         updatedAt: '2020-10-29 21:20:33',
