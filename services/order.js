@@ -1,7 +1,15 @@
-const { Order } = require('../models');
+const { Order, Buyer, Provider } = require('../models');
+const { convertDateFormat } = require('./utilities');
 
 module.exports.getOrders = async () => {
-  const orders = await Order.findAll();
+  const orders = await Order.findAll({
+    include: [
+      { model: Buyer, as: 'buyer', attributes: ['name'] },
+      { model: Provider, as: 'provider', attributes: ['name'] },
+    ],
+  });
 
-  return orders;
+  const ordersFormatted = await convertDateFormat(orders);
+  
+  return ordersFormatted;
 };
