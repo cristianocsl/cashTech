@@ -30,7 +30,7 @@ const Buyer = (sequelize, DataTypes) => {
     models.Buyer.belongsTo(models.Cnpj,
       { foreignKey: 'cnpjId', as: 'cnpj' });
   };
-  
+    
   return buyer;
 };
 
