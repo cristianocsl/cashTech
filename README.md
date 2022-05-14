@@ -122,13 +122,15 @@ Aplicação back-end desenvolvida com NodeJS, MySQL e Sequelize.
       "name": "CEDENTE 002"
     }
   }
-]```
+]
+```
 
 ## Ferramentas utilizadas
 
 - [NodeJS];
 - [MySQL];
 - [Sequelize];
+
 
 ## Contatos
 
