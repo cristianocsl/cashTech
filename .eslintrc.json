@@ -4,10 +4,15 @@
         "es2021": true,
         "node": true
     },
-    "extends": "trybe-backend",
+    "extends": [
+        "trybe-backend",
+        "plugin:node/recommended"
+    ],
     "parserOptions": {
         "ecmaVersion": "latest"
     },
     "rules": {
+        "quotes": ["error", "single"],
+        "max-lines-per-function": ["error", { "max": 200 }]
     }
 }
