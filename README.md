@@ -3,7 +3,7 @@
 
 ## Contexto
 
-Aplicação back-end desenvolvida com NodeJS, MySQL e Sequelize.
+Aplicação back-end desenvolvida com NodeJS, Express, MySQL e Sequelize.
 
 ## Instruções para rodar o projeto localmente
 
@@ -130,6 +130,8 @@ Aplicação back-end desenvolvida com NodeJS, MySQL e Sequelize.
 - [NodeJS];
 - [MySQL];
 - [Sequelize];
+- [Express];
+- [date-fns];
 
 
 ## Contatos
