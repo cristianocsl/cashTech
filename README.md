@@ -28,7 +28,6 @@ Aplicação back-end desenvolvida com NodeJS, MySQL e Sequelize.
 * Resultado esperado:
 
 ```json
-{
 [
   {
     "id": 1,
@@ -123,7 +122,6 @@ Aplicação back-end desenvolvida com NodeJS, MySQL e Sequelize.
       "name": "CEDENTE 002"
     }
   }
-]
 }```
 
 ## Ferramentas utilizadas
