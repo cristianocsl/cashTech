@@ -1,5 +1,5 @@
 const { Order, Buyer, Provider } = require('../models');
-const { convertDateFormat } = require('./utilities');
+const { convertDateFormat, setProperties } = require('./utilities');
 
 module.exports.getOrders = async () => {
   const orders = await Order.findAll({
@@ -10,6 +10,6 @@ module.exports.getOrders = async () => {
   });
 
   const ordersFormatted = await convertDateFormat(orders);
-  
-  return ordersFormatted;
+  const result = setProperties(ordersFormatted);
+  return result;
 };
