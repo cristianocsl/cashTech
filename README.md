@@ -11,7 +11,7 @@ Aplicação back-end desenvolvida com NodeJS, Express, MySQL e Sequelize.
 `git clone git@github.com:cristianocsl/cashTech.git`
 
 2. entre no diretório frontend-pokemon:
-<code>cd cashTec</code>
+<code>cd cashTech</code>
 
 3. instale as dependências com <code>npm install</code>
 
