@@ -19,7 +19,12 @@ Aplicação back-end desenvolvida com NodeJS, Express, MySQL e Sequelize.
 
 5. a aplicação estará disponível em `http://localhost:3001`
 
-6. para interromper a execução da aplicação, execute `ctrl + c`
+6. crie o arquivo .env na raiz do projeto com o nome de usuário e a senha do seu banco de dados MySQL:
+
+MYSQL_USER=meu_nome_de_usuario
+MYSQL_PASSWORD=minha_senha
+
+7. para interromper a execução da aplicação, execute `ctrl + c`
 
 ## Visualizando detalhes de notas fiscais
 
