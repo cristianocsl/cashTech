@@ -26,6 +26,9 @@ MYSQL_PASSWORD=minha_senha
 
 7. para interromper a execução da aplicação, execute `ctrl + c`
 
+## Para rodar o front-end desse projeto, acesso o link abaixo e siga as intruções para rodar o projeto
+https://github.com/cristianocsl/cash_tech_front_2
+
 ## Visualizando detalhes de notas fiscais
 
 ### Endpoint GET <code>/</code>
